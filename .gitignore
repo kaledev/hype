@@ -3,5 +3,5 @@ __pycache__
 .venv
 *.secret
 /secrets
+auth-prod.yaml
 config-prod.yaml
-/config/
