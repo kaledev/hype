@@ -43,9 +43,9 @@ class Config:
     def __init__(self):
         basedir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         # auth file containing login info
-        auth = os.path.join(basedir, "config", "auth.yaml")
+        auth = os.path.join(basedir, "config", "auth-prod.yaml")
         # settings file containing subscriptions
-        conf = os.path.join(basedir, "config", "config.yaml")
+        conf = os.path.join(basedir, "config", "config-prod.yaml")
 
         # only load auth info
         with open(auth, "r") as configfile:

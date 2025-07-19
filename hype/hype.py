@@ -5,7 +5,7 @@ import time
 import schedule
 from mastodon import Mastodon
 
-from config import Config
+from .config import Config
 
 
 class Hype:
