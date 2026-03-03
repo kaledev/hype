@@ -60,6 +60,12 @@ class Hype:
                         source_account = status["account"]["acct"].split("@")
                         server = source_account[-1]
                         filtered = server in self.config.filtered_instances
+                        # check if the original poster has the #nobots hashtag in their bio
+                        # if so set the "filtered variable to ignore the repost"
+                        nobot_tags = ["#nobot", "#nobots"]
+                        bio = status["account"]["note"].casefold()
+                        for tag in nobot_tags:
+                            filtered = filtered or tag in bio
                         # Boost if not already boosted
                         already_boosted = status["reblogged"]
                         if not already_boosted and not filtered:
